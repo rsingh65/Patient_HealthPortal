@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="germaneModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="userAppointmentsInfo">
+          <Key>
+            <PropertyRef Name="appointmentid" />
+          </Key>
+          <Property Name="appointmentid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="userid" Type="int" Nullable="false" />
+          <Property Name="appointment_CreationDate" Type="date" Nullable="false" />
+          <Property Name="appointment_Date" Type="date" Nullable="false" />
+          <Property Name="appointment_Title" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="appointment_Description" Type="nvarchar(max)" />
+          <Property Name="appointment_Time" Type="time" Precision="7" Nullable="false" />
+        </EntityType>
+        <EntityType Name="userDetails">
+          <Key>
+            <PropertyRef Name="userid" />
+          </Key>
+          <Property Name="userid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="username" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="password" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="fullname" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="germaneModelStoreContainer">
+          <EntitySet Name="userAppointmentsInfo" EntityType="Self.userAppointmentsInfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="userDetails" EntityType="Self.userDetails" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="germaneModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="userAppointmentsInfo">
+          <Key>
+            <PropertyRef Name="appointmentid" />
+          </Key>
+          <Property Name="appointmentid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="userid" Type="Int32" Nullable="false" />
+          <Property Name="appointment_CreationDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="appointment_Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="appointment_Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="appointment_Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="appointment_Time" Type="Time" Nullable="false" Precision="7" />
+        </EntityType>
+        <EntityType Name="userDetails">
+          <Key>
+            <PropertyRef Name="userid" />
+          </Key>
+          <Property Name="userid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="fullname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="usersinfoEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="userAppointmentsInfo" EntityType="Self.userAppointmentsInfo" />
+          <EntitySet Name="userDetails" EntityType="Self.userDetails" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="germaneModelStoreContainer" CdmEntityContainer="usersinfoEntities">
+          <EntitySetMapping Name="userAppointmentsInfo">
+            <EntityTypeMapping TypeName="germaneModel.userAppointmentsInfo">
+              <MappingFragment StoreEntitySet="userAppointmentsInfo">
+                <ScalarProperty Name="appointmentid" ColumnName="appointmentid" />
+                <ScalarProperty Name="userid" ColumnName="userid" />
+                <ScalarProperty Name="appointment_CreationDate" ColumnName="appointment_CreationDate" />
+                <ScalarProperty Name="appointment_Date" ColumnName="appointment_Date" />
+                <ScalarProperty Name="appointment_Title" ColumnName="appointment_Title" />
+                <ScalarProperty Name="appointment_Description" ColumnName="appointment_Description" />
+                <ScalarProperty Name="appointment_Time" ColumnName="appointment_Time" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="userDetails">
+            <EntityTypeMapping TypeName="germaneModel.userDetails">
+              <MappingFragment StoreEntitySet="userDetails">
+                <ScalarProperty Name="userid" ColumnName="userid" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="fullname" ColumnName="fullname" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

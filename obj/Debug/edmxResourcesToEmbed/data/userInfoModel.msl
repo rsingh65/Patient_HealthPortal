@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="usersinfoModelStoreContainer" CdmEntityContainer="usersinfoEntities">
+    <EntitySetMapping Name="userDetails">
+      <EntityTypeMapping TypeName="usersinfoModel.userDetail">
+        <MappingFragment StoreEntitySet="userDetails">
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="fullname" ColumnName="fullname" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="userAppointmetsInfoes">
+      <EntityTypeMapping TypeName="usersinfoModel.userAppointmetsInfo">
+        <MappingFragment StoreEntitySet="userAppointmetsInfo">
+          <ScalarProperty Name="appointment_Date" ColumnName="appointment_Date" />
+          <ScalarProperty Name="appointment_CreationDate" ColumnName="appointment_CreationDate" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="appointmentid" ColumnName="appointmentid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

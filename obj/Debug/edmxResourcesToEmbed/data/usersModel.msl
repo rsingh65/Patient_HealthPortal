@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="germaneModelStoreContainer" CdmEntityContainer="usersinfoEntities">
+    <EntitySetMapping Name="userAppointmentsInfo">
+      <EntityTypeMapping TypeName="germaneModel.userAppointmentsInfo">
+        <MappingFragment StoreEntitySet="userAppointmentsInfo">
+          <ScalarProperty Name="appointmentid" ColumnName="appointmentid" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="appointment_CreationDate" ColumnName="appointment_CreationDate" />
+          <ScalarProperty Name="appointment_Date" ColumnName="appointment_Date" />
+          <ScalarProperty Name="appointment_Title" ColumnName="appointment_Title" />
+          <ScalarProperty Name="appointment_Description" ColumnName="appointment_Description" />
+          <ScalarProperty Name="appointment_Time" ColumnName="appointment_Time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="userDetails">
+      <EntityTypeMapping TypeName="germaneModel.userDetails">
+        <MappingFragment StoreEntitySet="userDetails">
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="fullname" ColumnName="fullname" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
